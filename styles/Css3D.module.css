@@ -1,0 +1,35 @@
+.world {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60vw;
+  height: 60vh;
+  background-color: #eee;
+  /* 3D 공간으로 만들어줌. 투시의 거리를 조절하는 개념 (1점 투시로 추정) */
+  /* 그러나 하나의 점이 존재하기 때문에 여러개의 오브젝트가 존재할 경우 각각 다른 투시가 구현됨 */
+  /* 모두 동일한 투시를 구현하고 싶다면 부모가 아닌 자식에게 직접 투시 주기 */
+  perspective: 500px;
+}
+
+.card {
+  margin: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 150px;
+  background-color: indianred;
+  border: 2px solid black;
+  border-radius: 0.5em; /* em은 rem을 기준으로 rem 값이 바뀌면 같이 바뀌는 사이즈 (부모를 rem으로 두고 있는 자식 em) */
+  font-size: 1.5rem; /* rem 은 무조건 body html을 기준으로 지정되는 사이즈 */
+  /* 동일한 투시를 주는 방법 */
+  /* transform: perspective(500px) rotateY(45deg); */
+  transform: rotateX(
+    0deg
+  ); /* 애니메이션을 줄 거라면 0도여도 값 주기 (최적화) */
+  transition: 1s;
+}
+
+.world:hover .card {
+  transform: rotateY(180deg);
+}
