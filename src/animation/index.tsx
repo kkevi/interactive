@@ -6,6 +6,9 @@ export default function Animation() {
     <div>
       <h1>Animation</h1>
       <div className={styles.box}>box</div>
+      <div style={{ height: 100 }} />
+      <h1>Animation2</h1>
+      <div className={styles.spaceship}></div>
     </div>
   );
 }
