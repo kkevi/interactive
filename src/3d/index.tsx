@@ -6,9 +6,10 @@ export default function Css3D() {
     <>
       <h1>CSS 3D</h1>
       <div className={styles.world}>
-        <div className={styles.card}>Card</div>
-        <div className={styles.card}>Card</div>
-        <div className={styles.card}>Card</div>
+        <div className={styles.card}>
+          <div className={`${styles.cardSide} ${styles.cardSideFront}`}>F</div>
+          <div className={`${styles.cardSide} ${styles.cardSideBack}`}>B</div>
+        </div>
       </div>
     </>
   );
